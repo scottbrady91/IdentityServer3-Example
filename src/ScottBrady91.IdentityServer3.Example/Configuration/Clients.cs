@@ -18,8 +18,8 @@ namespace ScottBrady91.IdentityServer3.Example.Configuration
                     Flow = Flows.Implicit,
                     RequireConsent = true,
                     AllowRememberConsent = true,
-                    RedirectUris = new List<string>{"https://localhost:44302/"},
-                    PostLogoutRedirectUris = new List<string>{"https://localhost:44302/"},
+                    RedirectUris = new List<string>{"https://localhost:44304/account/signInCallback"},
+                    PostLogoutRedirectUris = new List<string>{"https://localhost:44304/"},
                     ScopeRestrictions =
                         new List<string>
                         {
