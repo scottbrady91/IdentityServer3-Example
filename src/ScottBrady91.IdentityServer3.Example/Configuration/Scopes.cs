@@ -12,7 +12,8 @@ namespace ScottBrady91.IdentityServer3.Example.Configuration
                 StandardScopes.OpenId,
                 StandardScopes.Roles,
                 StandardScopes.Profile,
-                StandardScopes.Email
+                StandardScopes.Email,
+                StandardScopes.OfflineAccess
             };
         }
     }

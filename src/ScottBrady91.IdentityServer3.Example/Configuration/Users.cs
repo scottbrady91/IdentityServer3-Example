@@ -20,10 +20,10 @@ namespace ScottBrady91.IdentityServer3.Example.Configuration
                     {
                         new Claim(Constants.ClaimTypes.GivenName, "Scott"),
                         new Claim(Constants.ClaimTypes.FamilyName, "Brady"),
-                        new Claim(Constants.ClaimTypes.Email, "info@scottbrady91.com")
+                        new Claim(Constants.ClaimTypes.Email, "info@scottbrady91.com"),
+                        new Claim(Constants.ClaimTypes.Role, "Badmin")
                     }
                 }
-
             };
         }
     }
