@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Thinktecture.IdentityServer.Core;
-using Thinktecture.IdentityServer.Core.Models;
+using IdentityServer3.Core;
+using IdentityServer3.Core.Models;
 
 namespace ScottBrady91.IdentityServer3.Example.Configuration
 {
@@ -20,7 +20,7 @@ namespace ScottBrady91.IdentityServer3.Example.Configuration
                     AllowRememberConsent = true,
                     RedirectUris = new List<string> {"https://localhost:44304/account/signInCallback"},
                     PostLogoutRedirectUris = new List<string> {"https://localhost:44304/"},
-                    ScopeRestrictions =
+                    AllowedScopes = 
                         new List<string>
                         {
                             Constants.StandardScopes.OpenId,
@@ -33,9 +33,9 @@ namespace ScottBrady91.IdentityServer3.Example.Configuration
                 {
                     ClientId = @"hybridclient",
                     ClientName = @"Example Hybrid Client",
-                    ClientSecrets = new List<ClientSecret>
+                    ClientSecrets = new List<Secret>
                     {
-                        new ClientSecret("idsrv3test".Sha256())
+                        new Secret("idsrv3test".Sha256())
                     },
                     Enabled = true,
                     Flow = Flows.Hybrid,
@@ -49,7 +49,7 @@ namespace ScottBrady91.IdentityServer3.Example.Configuration
                     {
                         "https://localhost:44305/"
                     },
-                    ScopeRestrictions = new List<string>
+                    AllowedScopes = new List<string>
                     {
                         Constants.StandardScopes.OpenId,
                         Constants.StandardScopes.Profile,

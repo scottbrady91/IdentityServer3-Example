@@ -1,6 +1,6 @@
 ﻿using Owin;
 using ScottBrady91.IdentityServer3.Example.Configuration;
-using Thinktecture.IdentityServer.Core.Configuration;
+using IdentityServer3.Core.Configuration;
 
 namespace ScottBrady91.IdentityServer3.Example
 {
@@ -16,7 +16,11 @@ namespace ScottBrady91.IdentityServer3.Example
                     {
                         SiteName = "Standalone Identity Server",
                         SigningCertificate = Cert.Load(),
-                        Factory = InMemoryFactory.Create(Users.Get(), Clients.Get(), Scopes.Get()),
+                        Factory = 
+                        new IdentityServerServiceFactory()
+                            .UseInMemoryClients(Clients.Get())
+                            .UseInMemoryScopes(Scopes.Get())
+                            .UseInMemoryUsers(Users.Get()),
                         RequireSsl = true
                     });
                 });
