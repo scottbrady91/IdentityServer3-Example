@@ -1,6 +1,10 @@
-﻿using Owin;
+﻿using IdentityServer3.Core.Configuration;
+using Microsoft.Owin;
+using Owin;
+using ScottBrady91.IdentityServer3.Example;
 using ScottBrady91.IdentityServer3.Example.Configuration;
-using IdentityServer3.Core.Configuration;
+
+[assembly: OwinStartup("InMemory", typeof(Startup))]
 
 namespace ScottBrady91.IdentityServer3.Example
 {
