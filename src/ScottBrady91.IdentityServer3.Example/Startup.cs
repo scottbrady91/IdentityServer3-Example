@@ -25,7 +25,8 @@ namespace ScottBrady91.IdentityServer3.Example
                             .UseInMemoryClients(Clients.Get())
                             .UseInMemoryScopes(Scopes.Get())
                             .UseInMemoryUsers(Users.Get()),
-                        RequireSsl = true
+                        RequireSsl = true,
+                        AuthenticationOptions = new AuthenticationOptions { EnablePostSignOutAutoRedirect = true }
                     });
                 });
         }
